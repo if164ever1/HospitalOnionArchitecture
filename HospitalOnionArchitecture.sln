@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalOnionArchitecture",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{ACEF7F05-AD93-413A-8781-8594166FF211}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfrastructureRepository", "InfrastructureRepository\InfrastructureRepository.csproj", "{AC3C52B4-9F7B-4FC3-81E7-D9A471F43E2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{07FB6ACF-BCB5-4FD8-800B-714CF740F8F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{DB720CE6-9AA9-49F8-9463-95B6DFADDC56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +27,17 @@ Global
 		{ACEF7F05-AD93-413A-8781-8594166FF211}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACEF7F05-AD93-413A-8781-8594166FF211}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACEF7F05-AD93-413A-8781-8594166FF211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3C52B4-9F7B-4FC3-81E7-D9A471F43E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3C52B4-9F7B-4FC3-81E7-D9A471F43E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3C52B4-9F7B-4FC3-81E7-D9A471F43E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3C52B4-9F7B-4FC3-81E7-D9A471F43E2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ACEF7F05-AD93-413A-8781-8594166FF211} = {07FB6ACF-BCB5-4FD8-800B-714CF740F8F5}
+		{AC3C52B4-9F7B-4FC3-81E7-D9A471F43E2C} = {DB720CE6-9AA9-49F8-9463-95B6DFADDC56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFFB14BF-F384-4013-AFF2-3683825EDAE3}
