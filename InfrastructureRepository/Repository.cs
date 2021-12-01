@@ -13,13 +13,13 @@ namespace InfrastructureRepository
         {
             db = context;
         }
-        public void Delete(T entity)
+        public void Delete(int id)
         {
-            var userId = db.Users.Find(entity.Id);
+            var user = GetUserById(id);
 
-            if (userId != null)
+            if (user != null)
             {
-                db.Users.Remove(userId);
+                db.Users.Remove(user);
                 db.SaveChanges();
             }
         }
@@ -32,13 +32,14 @@ namespace InfrastructureRepository
 
         public T GetByIdAsync(int id)
         {
-            var user = db.Users.Find(id);
+            var user = GetUserById(id);
             return (T)user;
         }
 
         public void Insert(T user)
         {
             db.Users.Add(user);
+            db.SaveChanges();
         }
 
         public void Save()
@@ -49,6 +50,11 @@ namespace InfrastructureRepository
         public void UpdateDb(T user)
         {
             db.Entry(user).State = EntityState.Modified;
+        }
+
+        public T GetUserById(int id)
+        {
+            return (T)db.Users.FirstOrDefault(user => user.Id == id);
         }
     }
 }

@@ -14,12 +14,12 @@ namespace ServiceUser
         }
         public void DeleteUser(int id)
         {
-            throw new System.NotImplementedException();
+            userRepository.Delete(1);
         }
 
         public User GetUser(int id)
         {
-            throw new System.NotImplementedException();
+            return userRepository.GetByIdAsync(id);
         }
 
         public IEnumerable<User> GetUsers()
@@ -29,12 +29,12 @@ namespace ServiceUser
 
         public void InsertUser(User user)
         {
-            throw new System.NotImplementedException();
+            userRepository.Insert(user);
         }
 
         public void UpdateUser(User user)
         {
-            throw new System.NotImplementedException();
+            userRepository.UpdateDb(user);
         }
     }
 }

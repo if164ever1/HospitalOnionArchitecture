@@ -9,7 +9,7 @@ namespace InfrastructureRepository
         T GetByIdAsync(int id);
         void Insert(T user);
         void UpdateDb(T user);
-        void Delete(T user);
+        void Delete(int id);
         void Save();
     }
 }
