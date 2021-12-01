@@ -1,7 +1,9 @@
+using InfrastructureRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,7 +35,12 @@ namespace HospitalOnionArchitecture
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HospitalOnionArchitecture", Version = "v1" });
             });
 
+            #region DataBase
             string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
+            services.AddDbContext<RepositoryDbContext>(options =>
+               options.UseSqlServer(connectionString)
+           );
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

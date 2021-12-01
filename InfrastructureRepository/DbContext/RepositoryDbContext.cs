@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace InfrastructureRepository
 {
-    class RepositoryDbContext: DbContext
+    public class RepositoryDbContext: DbContext
     {
         public RepositoryDbContext(DbContextOptions<RepositoryDbContext> options) : base(options)
         {
