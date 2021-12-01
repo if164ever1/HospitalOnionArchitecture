@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace InfrastructureRepository
 {
-    class Repository<T> : IRepository<T> where T : User
+    public class Repository<T> : IRepository<T> where T : User
     {
         private readonly RepositoryDbContext db;
 

@@ -35,6 +35,7 @@ namespace HospitalOnionArchitecture
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HospitalOnionArchitecture", Version = "v1" });
             });
 
+
             #region DataBase
             string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
             services.AddDbContext<RepositoryDbContext>(options =>
