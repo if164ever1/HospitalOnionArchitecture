@@ -12,3 +12,4 @@ namespace InfrastructureRepository
         void Delete(T user);
         void Save();
     }
+}

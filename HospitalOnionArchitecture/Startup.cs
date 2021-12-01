@@ -32,6 +32,8 @@ namespace HospitalOnionArchitecture
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HospitalOnionArchitecture", Version = "v1" });
             });
+
+            string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
