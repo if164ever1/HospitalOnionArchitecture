@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ServiceUser
 {
-    interface iUserService
+    public interface IUserService
     {
         IEnumerable<User> GetUsers();
         User GetUser(int id);

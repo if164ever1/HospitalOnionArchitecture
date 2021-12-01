@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InfrastructureRepository\InfrastructureRepository.csproj" />
+    <ProjectReference Include="..\ServiceUser\ServiceUser.csproj" />
   </ItemGroup>
 
 </Project>
