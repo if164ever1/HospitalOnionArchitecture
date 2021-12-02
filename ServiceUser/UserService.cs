@@ -36,5 +36,10 @@ namespace ServiceUser
         {
             userRepository.UpdateDb(user);
         }
+
+        public void Save()
+        {
+            userRepository.Save();
+        }
     }
 }

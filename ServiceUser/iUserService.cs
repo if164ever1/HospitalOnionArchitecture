@@ -10,5 +10,6 @@ namespace ServiceUser
         void InsertUser(User user);
         void UpdateUser(User user);
         void DeleteUser(int id);
+        void Save();
     }
 }
