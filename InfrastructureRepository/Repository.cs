@@ -54,7 +54,7 @@ namespace InfrastructureRepository
 
         public T GetUserById(int id)
         {
-            return (T)db.Users.FirstOrDefault(user => user.BaseEntity.Id == id);
+            return (T)db.Users.FirstOrDefault(user => user.Id == id);
         }
     }
 }
