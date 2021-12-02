@@ -1,5 +1,6 @@
-﻿using Domain.MapModel;
+﻿using HospitalOnionArchitecture.Domain.Core;
 using InfrastructureRepository;
+using ServiceAcount.PassHash;
 using ServiceUser;
 using System;
 using System.Linq;
@@ -16,32 +17,23 @@ namespace ServiceAcount
             userService = service;
         }
 
-        public void Registration(UserMap userMap)
+        public bool Registration(User user)
         {
-            //if (dbContext.Users.FirstOrDefault(db => db.Email == userMap.) != null)
-            //{
-
-            //}
-
-
-
-            //if (userService.FirstOrDefault(u => u.Email == registerRequest.Email) != null)
-            //{
-            //    return BadRequest(new { message = "Login already use" });
-            //}
-
-            //UserModel userModel = new UserModel
-            //{
-            //    FirstName = registerRequest.FirstName,
-            //    LastName = registerRequest.LastName,
-            //    Email = registerRequest.Email,
-            //    Password = CustomHash.HashPassword(registerRequest.Password)
-            //};
-
-            //userContext.Users.Add(userModel);
-            //await userContext.SaveChangesAsync();
-
-            //return Ok(new { message = "Registration is succesfuly" });
+            if (dbContext.Users.FirstOrDefault(db => db.Email == user.Email) != null)  //remake
+            {
+                return false;
+            }
+            else
+            {
+                User userModel = new User
+                {
+                    Email = user.Email,
+                    Password = CustomHash.HashPassword(user.Password)
+                };
+                userService.InsertUser(userModel);
+                userService.Save();
+                return true;
+            }
         }
 
 
