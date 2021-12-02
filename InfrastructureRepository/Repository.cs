@@ -15,7 +15,7 @@ namespace InfrastructureRepository
         }
         public void Delete(int id)
         {
-            var user = GetUserById(id);
+            T user = GetUserById(id);
 
             if (user != null)
             {
@@ -54,7 +54,7 @@ namespace InfrastructureRepository
 
         public T GetUserById(int id)
         {
-            return (T)db.Users.FirstOrDefault(user => user.Id == id);
+            return (T)db.Users.FirstOrDefault(user => user.BaseEntity.Id == id);
         }
     }
 }
