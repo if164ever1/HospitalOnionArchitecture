@@ -1,5 +1,4 @@
-﻿
-using HospitalOnionArchitecture.Domain.Core;
+﻿using HospitalOnionArchitecture.Domain.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace InfrastructureRepository
@@ -11,6 +10,22 @@ namespace InfrastructureRepository
         }
 
         public DbSet<User> Users { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<User>()
+        //        .HasOne(a => a.UserProfile)
+        //        .WithOne(b => b.User)
+        //        .HasForeignKey<UserProfile>(b => b.IdUserRef);
+        //}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //Configure default schema
+            modelBuilder.HasDefaultSchema("Admin");
+            //Map entity to table
+            modelBuilder.Entity<User>().ToTable("UserInfo");
+        }
 
     }
 }
