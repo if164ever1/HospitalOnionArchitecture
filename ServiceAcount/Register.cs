@@ -2,7 +2,6 @@
 using InfrastructureRepository;
 using ServiceAcount.PassHash;
 using ServiceUser;
-using System;
 using System.Linq;
 
 namespace ServiceAcount
@@ -35,9 +34,6 @@ namespace ServiceAcount
                 return true;
             }
         }
-
-
-
 
     }
 }
