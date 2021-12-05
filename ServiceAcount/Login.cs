@@ -1,4 +1,5 @@
-﻿using HospitalOnionArchitecture.Domain.Core;
+﻿using Domain.RequestModel;
+using HospitalOnionArchitecture.Domain.Core;
 using InfrastructureRepository;
 using ServiceAcount.PassHash;
 using ServiceUser;
@@ -18,7 +19,7 @@ namespace ServiceAcount
             userService = service;
         }
 
-        public bool LoginUser(User user)
+        public bool LoginUser(LoginRequestUser user)
         {
             var validUser = dbContext.Users.SingleOrDefault(x => x.Email == user.Email);
 
