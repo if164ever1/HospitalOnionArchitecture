@@ -1,4 +1,5 @@
-﻿using HospitalOnionArchitecture.Domain.Core;
+﻿using Domain.Model;
+using HospitalOnionArchitecture.Domain.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace InfrastructureRepository
@@ -10,6 +11,7 @@ namespace InfrastructureRepository
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<TokenModel> Tokens { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
@@ -25,6 +27,7 @@ namespace InfrastructureRepository
             modelBuilder.HasDefaultSchema("Admin");
             //Map entity to table
             modelBuilder.Entity<User>().ToTable("UserInfo");
+            modelBuilder.Entity<TokenModel>().ToTable("TokenInfo");
         }
 
     }

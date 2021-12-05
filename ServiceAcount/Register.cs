@@ -1,4 +1,5 @@
-﻿using HospitalOnionArchitecture.Domain.Core;
+﻿using Domain.NewFolder;
+using HospitalOnionArchitecture.Domain.Core;
 using InfrastructureRepository;
 using ServiceAcount.PassHash;
 using ServiceUser;
@@ -16,7 +17,7 @@ namespace ServiceAcount
             userService = service;
         }
 
-        public bool Registration(User user)
+        public bool Registration(RequestUser user)
         {
             if (dbContext.Users.FirstOrDefault(db => db.Email == user.Email) != null)  //remake
             {
@@ -34,6 +35,5 @@ namespace ServiceAcount
                 return true;
             }
         }
-
     }
 }
