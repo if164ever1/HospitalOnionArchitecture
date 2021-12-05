@@ -34,26 +34,9 @@ namespace HospitalOnionArchitecture.Controllers
         //    return BadRequest();
         //}
 
-        [HttpPost("login")]
-        public IActionResult Login(User loginRequest)
-        {
-            if (login.LoginUser(loginRequest))
-            {
-                return Ok("Login successfull");
-            }
-            return BadRequest("Email or password is incorect");
-        }
+        
 
 
-        [HttpPost("register")]
-        public IActionResult Put(RequestUser user)
-        {
-
-            if (register.Registration(user))
-            {
-                return Ok("Registration successfull");
-            }
-            return BadRequest("Email is already use");
-        }
+       
     }
 }
